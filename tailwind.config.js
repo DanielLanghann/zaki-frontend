@@ -7,6 +7,9 @@ module.exports = {
         markpro: ["MarkPro", "sans-serif"],
       },
     },
+    fontFamily: {
+      sans: ["MarkPro", "ui-sans-serif", "system-ui", "sans-serif"],
+    },
   },
   plugins: [],
 };
