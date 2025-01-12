@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -14,13 +14,14 @@ const LoginScreen = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const userLogin = useSelector((state) => state.userLogin);
-    const { loading, error, userInfo } = userLogin;
+    const login = useSelector((state) => state.login);
+    const { loading, error, userInfo } = login;
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const onLogin = (e) => {
-        handleLogin(e, username, password);
+        handleLogin(e, username, password, dispatch);
     };
 
     useEffect(()=> {
@@ -33,12 +34,12 @@ const LoginScreen = () => {
     })
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-900 font-markpro">
+        <div className="min-h-screen flex items-center justify-center bg-gray-700 font-markpro">
             <div className="bg-gray-800 p-12 rounded-lg shadow-lg w-full max-w-4xl text-white">
                 <div className="text-center mb-10">
-                    <h1 className="text-5xl font-bold text-green-400">
-                        Welcome to zAkI your personal BI Assistant
-                    </h1>
+                    <h4 className="text-5xl font-bold text-green-400">
+                        zAkI AI
+                    </h4>
                 </div>
                 <form onSubmit={onLogin}>
                     <CustomInput
@@ -62,7 +63,8 @@ const LoginScreen = () => {
                     <CustomPrimaryButton
                         type="submit"
                         disabled={loading}
-                        fullWidth="true"
+                        fullWidth="false"
+                        margin="mt-4"
                     >
                         {loading ? (
                             <CustomLoadingSpinner size={6} text="Logging in..."/>

@@ -3,23 +3,20 @@ import axios from "axios";
 import {
     USER_LOGIN_REQUEST,
     USER_LOGIN_SUCCESS,
-    USER_LOGIN_FAIL
+    USER_LOGIN_FAIL, noTokenMessage
 } from "../constants/loginConstants";
-import {apiBaseUrl} from "../../../utils/serverConfig";
+import {apiLoginUrl} from "../../../utils/urls";
 
-const loginUrl = `${apiBaseUrl}api/token/`;
-
+export const userInfoItem = "userInfo"
 export const login = (username, password) => async (dispatch) => {
     try {
         dispatch({type: USER_LOGIN_REQUEST});
-        console.log(`Login Request to ${loginUrl}`)
-        const { data } = await axios.post(loginUrl, {username, password});
-
+        const { data } = await axios.post(apiLoginUrl, {username, password});
         if(!data || !data.access) {
-            throw new Error("Access token not received from server");
+            throw new Error(noTokenMessage);
         }
         dispatch({ type: USER_LOGIN_SUCCESS, payload: data});
-        localStorage.setItem("userInfo", JSON.stringify(data));
+        localStorage.setItem(userInfoItem, JSON.stringify(data));
 
     }catch (error){
         dispatch({
