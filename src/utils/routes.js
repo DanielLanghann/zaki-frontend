@@ -4,3 +4,4 @@ export const analyticsRoute = "/analytics";
 export const connectionsRoute = "/connections";
 export const tablesRoute = "/tables";
 export const filesRoute = "/files";
+export const accountsRoute = "/accounts";

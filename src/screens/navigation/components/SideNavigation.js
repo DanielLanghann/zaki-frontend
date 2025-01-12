@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartLine, faDatabase,
-    faTable, faFolder, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+    faTable, faFolder, faChevronLeft, faChevronRight, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 
-import {analyticsRoute, connectionsRoute, tablesRoute, filesRoute} from "../../../utils/routes";
+import {analyticsRoute, connectionsRoute, tablesRoute, filesRoute, accountsRoute} from "../../../utils/routes";
 
 
 const SideNavigation = () => {
@@ -14,6 +14,7 @@ const SideNavigation = () => {
         { icon: faDatabase, text: 'Connections', href: connectionsRoute },
         { icon: faTable, text: 'Tables', href: tablesRoute },
         { icon: faFolder, text: 'Files', href: filesRoute },
+        { icon: faUserGroup, text: 'User', href: accountsRoute },
     ];
     return (
         <nav className={`bg-gray-800 text-white fixed h-full left-0 top-0 flex flex-col transition-all duration-300 ${isExpanded ? 'w-64' : 'w-16'}`}>
