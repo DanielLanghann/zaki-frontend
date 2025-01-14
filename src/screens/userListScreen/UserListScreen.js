@@ -28,7 +28,7 @@ const UserListScreen = () => {
 
     return (
         <Navigation>
-            <div className="p-6 bg-gray-100">
+            <div className="p-6 bg-gray-100 min-h-screen">
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}
@@ -55,11 +55,11 @@ const UserListScreen = () => {
                     <div className="text-red-500 text-center">
                         {error}
                     </div>
-                    ) : (
-                        <CustomTable
-                            columns={columns}
-                            data={users}
-                        />
+                ) : (
+                    <CustomTable
+                        columns={columns}
+                        data={users}
+                    />
                 )}
             </div>
         </Navigation>

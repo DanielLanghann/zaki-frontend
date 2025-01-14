@@ -6,9 +6,8 @@ import { faChartLine, faDatabase,
 import {analyticsRoute, connectionsRoute, tablesRoute, filesRoute, userListRoute} from "../../../utils/routes";
 
 
-const SideNavigation = () => {
+const SideNavigation = ({ isExpanded, setIsExpanded }) => {
 
-    const [isExpanded, setIsExpanded] = useState(true);
     const menuItems = [
         { icon: faChartLine, text: 'Analytics', href: analyticsRoute },
         { icon: faDatabase, text: 'Connections', href: connectionsRoute },
@@ -17,7 +16,9 @@ const SideNavigation = () => {
         { icon: faUserGroup, text: 'User', href: userListRoute },
     ];
     return (
-        <nav className={`bg-gray-800 text-white fixed h-full left-0 top-0 flex flex-col transition-all duration-300 ${isExpanded ? 'w-64' : 'w-16'}`}>
+        <nav className={`bg-gray-800 text-white fixed h-full left-0 top-0 flex flex-col transition-all duration-300 ${
+            isExpanded ? 'w-64' : 'w-16'
+        }`}>
             <button
                 onClick={()=> setIsExpanded(!isExpanded)}
                 className="absolute -right-3 top-20 bg-gray-800 text-white p-1 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
