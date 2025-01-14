@@ -6,6 +6,8 @@ import {Provider, useSelector} from "react-redux";
 import store from "./store";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
+import UserListScreen from "./screens/userListScreen/UserListScreen";
+import {homeRoute, logInRoute, userListRoute} from "./utils/routes";
 
 
 const PrivateRoute = ({ element }) => {
@@ -20,12 +22,17 @@ function App() {
       <Provider store={store}>
           <Router>
               <Routes>
-                  <Route path="/login" element={<LoginScreen />}/>
+                  <Route path={logInRoute} element={<LoginScreen />}/>
                   <Route
-                      path="/home"
+                      path={homeRoute}
                       element={<PrivateRoute element={<HomeScreen />} />}
                   />
-                  <Route path="/" element={<Navigate to="/login" replace /> }/>
+                  <Route path="/" element={<Navigate to={logInRoute} replace /> }/>
+                  <Route path="/" element={<Navigate to={logInRoute} replace /> }/>
+                  <Route
+                      path={userListRoute}
+                      element={<PrivateRoute element={<UserListScreen />} />}
+                  />
               </Routes>
           </Router>
       </Provider>

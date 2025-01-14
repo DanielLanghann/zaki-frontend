@@ -4,7 +4,6 @@ import {userInfoItem} from "../../loginScreen/actions/loginActions";
 import {apiLogoutUrl} from "../../../utils/urls";
 import axios from "axios";
 
-
 const performLogOutSuccess =  (dispatch) => {
     dispatch({type: USER_LOGOUT_EXECUTED});
     localStorage.removeItem(userInfoItem);
