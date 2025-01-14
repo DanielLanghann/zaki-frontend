@@ -6,10 +6,8 @@ const Navigation = ({ children }) => {
         <div className="min-h-screen bg-gray-100">
             <HeaderNavigation />
             <SideNavigation />
-            <main className="pl-64 pt-16">
-                <div className="p-6">
+            <main className="pl-64 pt-16 bg-gray-100 min-h-screen">
                     {children}
-                </div>
             </main>
         </div>
     );

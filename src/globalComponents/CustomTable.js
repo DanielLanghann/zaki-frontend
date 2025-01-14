@@ -11,37 +11,41 @@ const CustomTable = ({ columns, data }) => {
 
     return (
         <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-700">
-                <thead className="bg-gray-800 sticky top-0 z-10">
-                <tr>
-                    {columns.map((column, index) => (
-                        <th
-                            key={index}
-                            className="px-6 py-3 text-left text-sm font-semibold text-gray-200"
-                        >
-                            {column.header}
-                        </th>
-                    ))}
-                </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-700">
-                {data.map((row, rowIndex) => (
-                    <tr
-                        key={rowIndex}
-                        className="hover:bg-gray-700 transition-colors"
-                    >
-                        {columns.map((column, colIndex) => (
-                            <td
-                                key={`${rowIndex}-${colIndex}`}
-                                className="px-6 py-4 text-sm text-gray-300 whitespace-nowrap"
+            <div className="max-h-96 overflow-y-auto">
+                <table className="min-w-full bg-gray-800 rounded-lg">
+                    <thead>
+                    <tr>
+                        {columns.map((column, index) => (
+                            <th
+                                key={index}
+                                className="px-4 py-2 text-left text-green-500"
                             >
-                                {column.accessor ? row[column.accessor] : row[column.header]}
-                            </td>
+                                {column.Header}
+                            </th>
                         ))}
                     </tr>
-                ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {data.map((row, rowIndex) => (
+                        <tr
+                            key={rowIndex}
+                            className="border-b border-gray-700 even:bg-gray-700"
+                        >
+                            {columns.map((column, colIndex) => (
+                                <td
+                                    key={`${rowIndex}-${colIndex}`}
+                                    className="px-4 py-2 text-white whitespace-nowrap"
+                                >
+                                    {column.accessor ? row[column.accessor] : row[column.header]}
+                                </td>
+                            ))}
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+
+            </div>
+
         </div>
     );
 };
