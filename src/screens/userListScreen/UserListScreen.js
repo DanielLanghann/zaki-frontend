@@ -41,7 +41,7 @@ const UserListScreen = () => {
                     pauseOnHover
                 />
 
-                <h1 className="text-2xl font-bold mb-6">Users</h1>
+                <h1 className="text-2xl font-bold mb-6 text-green-500">Users</h1>
 
                 {loading ? (
                     <div className="flex justify-center items-center h-64">
