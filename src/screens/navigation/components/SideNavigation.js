@@ -26,7 +26,8 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
             >
                 <FontAwesomeIcon
                     icon={isExpanded ? faChevronLeft : faChevronRight}
-                    className="w-4 h-4"
+                    className="w-4 h-4 text-blue-300"
+
                     />
             </button>
             <div className="flex-1 flex items-center">
@@ -36,13 +37,13 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
                             <li key={index}>
                                 <a
                                     href={item.href}
-                                    className={`flex items-center px-4 py-2 hover:bg-green-600 rounded transition-colors ${
+                                    className={`flex items-center px-4 py-2 hover:bg-gray-400 rounded transition-colors ${
                                         !isExpanded ? 'justify-center' : ''
                                     }`}
                                 >
                                     <FontAwesomeIcon
                                         icon={item.icon}
-                                        className={`w-5 h-5 ${isExpanded ? 'mr-3' : ''}`}
+                                        className={`w-5 h-5 ${isExpanded ? 'mr-3' : ''} text-blue-300`}
                                     />
                                     {isExpanded && <span>{item.text}</span>}
                                 </a>
