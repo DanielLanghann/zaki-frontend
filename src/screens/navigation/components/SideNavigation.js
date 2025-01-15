@@ -26,7 +26,7 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
             >
                 <FontAwesomeIcon
                     icon={isExpanded ? faChevronLeft : faChevronRight}
-                    className="w-4 h-4 text-blue-300"
+                    className="w-4 h-4"
 
                     />
             </button>
@@ -43,7 +43,7 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
                                 >
                                     <FontAwesomeIcon
                                         icon={item.icon}
-                                        className={`w-5 h-5 ${isExpanded ? 'mr-3' : ''} text-blue-300`}
+                                        className={`w-5 h-5 ${isExpanded ? 'mr-3' : ''} `}
                                     />
                                     {isExpanded && <span>{item.text}</span>}
                                 </a>
