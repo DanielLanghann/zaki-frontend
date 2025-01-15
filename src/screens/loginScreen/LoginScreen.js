@@ -63,7 +63,7 @@ const LoginScreen = () => {
                     <CustomPrimaryButton
                         type="submit"
                         disabled={loading}
-                        fullWidth="false"
+                        fullWidth={true}
                         margin="mt-4"
                     >
                         {loading ? (

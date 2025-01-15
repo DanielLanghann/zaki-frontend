@@ -28,7 +28,7 @@ const UserListScreen = () => {
 
     return (
         <Navigation>
-            <div className="p-6 bg-gray-100 min-h-screen">
+            <div className="p-6 bg-gray-800 min-h-screen">
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}
