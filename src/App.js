@@ -7,7 +7,8 @@ import store from "./store";
 import LoginScreen from "./screens/loginScreen/LoginScreen";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import UserListScreen from "./screens/userListScreen/UserListScreen";
-import {homeRoute, logInRoute, userListRoute} from "./utils/routes";
+import {analyticsRoute, homeRoute, logInRoute, userListRoute} from "./utils/routes";
+import AnalyticsScreen from "./screens/analyticsScreen/AnalyticsScreen";
 
 
 const PrivateRoute = ({ element }) => {
@@ -32,6 +33,10 @@ function App() {
                   <Route
                       path={userListRoute}
                       element={<PrivateRoute element={<UserListScreen />} />}
+                  />
+                  <Route
+                      path={analyticsRoute}
+                      element={<PrivateRoute element={<AnalyticsScreen />} />}
                   />
               </Routes>
           </Router>
