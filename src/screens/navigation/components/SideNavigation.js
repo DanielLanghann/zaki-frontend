@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartLine, faDatabase,
     faTable, faFolder, faChevronLeft, faChevronRight, faUserGroup } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +7,6 @@ import {analyticsRoute, connectionsRoute, tablesRoute, filesRoute, userListRoute
 
 
 const SideNavigation = ({ isExpanded, setIsExpanded }) => {
-
     const menuItems = [
         { icon: faChartLine, text: 'Analytics', href: analyticsRoute },
         { icon: faDatabase, text: 'Connections', href: connectionsRoute },
@@ -15,20 +14,18 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
         { icon: faFolder, text: 'Files', href: filesRoute },
         { icon: faUserGroup, text: 'User', href: userListRoute },
     ];
+
     return (
-        <nav className={`bg-gray-800 text-white fixed h-full left-0 top-0 flex flex-col transition-all duration-300 ${
-            isExpanded ? 'w-64' : 'w-16'
-        }`}>
+        <nav className={`bg-gray-100 text-white fixed h-full left-0 top-0 flex flex-col transition-all duration-300 ${isExpanded ? 'w-64' : 'w-16'}`}>
             <button
-                onClick={()=> setIsExpanded(!isExpanded)}
-                className="absolute -right-3 top-20 bg-gray-800 text-white p-1 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="absolute -right-3 top-20 bg-gray-100 text-white p-1 rounded-full shadow-lg hover:bg-gray-200 transition-colors"
                 aria-label={isExpanded ? 'Collapse menu' : 'Expand menu'}
             >
                 <FontAwesomeIcon
                     icon={isExpanded ? faChevronLeft : faChevronRight}
-                    className="w-4 h-4"
-
-                    />
+                    className="w-4 h-4 text-gray-500"
+                />
             </button>
             <div className="flex-1 flex items-center">
                 <div className="w-full px-4">
@@ -37,13 +34,11 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
                             <li key={index}>
                                 <a
                                     href={item.href}
-                                    className={`flex items-center px-4 py-2 hover:bg-gray-400 rounded transition-colors ${
-                                        !isExpanded ? 'justify-center' : ''
-                                    }`}
+                                    className={`flex items-center px-4 py-2 text-gray-500 hover:bg-gray-200 rounded transition-colors ${!isExpanded ? 'justify-center' : ''}`}
                                 >
                                     <FontAwesomeIcon
                                         icon={item.icon}
-                                        className={`w-5 h-5 ${isExpanded ? 'mr-3' : ''} `}
+                                        className={`w-5 h-5 ${isExpanded ? 'mr-3' : ''} text-gray-500`}
                                     />
                                     {isExpanded && <span>{item.text}</span>}
                                 </a>
@@ -55,4 +50,5 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
         </nav>
     );
 };
+
 export default SideNavigation;

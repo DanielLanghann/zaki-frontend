@@ -19,7 +19,7 @@ const PrimaryButton = ({
 
     const className = [
         "font-bold rounded-full transition duration-300",
-        "focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50",
+        "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50",
         "flex items-center justify-center font-markpro",
 
         sizeClasses,

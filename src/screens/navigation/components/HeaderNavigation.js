@@ -12,9 +12,9 @@ const HeaderNavigation = () => {
     }
 
     return (
-        <header className="bg-gray-800 text-white py-4 shadow-md fixed w-full top-0 z-10 h-16">
+        <header className="bg-gray-100 text-white py-4 shadow-md fixed w-full top-0 z-10 h-16">
             <div className="container mx-auto flex justify-end items-center px-4 h-full">
-                <button onClick={onLogout} className="focus:outline-none text-white">
+                <button onClick={onLogout} className="focus:outline-none text-gray-500">
                     <FontAwesomeIcon icon={faSignOutAlt} />
                 </button>
 

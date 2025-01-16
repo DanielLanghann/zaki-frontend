@@ -34,10 +34,10 @@ const LoginScreen = () => {
     })
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-700 font-markpro">
-            <div className="bg-gray-800 p-12 rounded-lg shadow-lg w-full max-w-4xl text-white">
+        <div className="min-h-screen flex items-center justify-center bg-gray-100 font-markpro">
+            <div className="bg-gray-100 p-12 rounded-lg shadow-lg w-full max-w-4xl text-gray-500">
                 <div className="text-center mb-10">
-                    <h4 className="text-5xl font-bold text-green-400">
+                    <h4 className="text-5xl font-bold text-blue-500">
                         zAkI AI
                     </h4>
                 </div>
