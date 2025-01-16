@@ -1,15 +1,15 @@
 import React from 'react';
 
 const PrimaryButton = ({
-   children,
-   onClick,
-   type = "button",
-   disabled = false,
-   size = "md",
-   textSize = "text-2xl",
-   fullWidth = false,
-   margin = "mt-0"
-}) => {
+                           children,
+                           onClick,
+                           type = "button",
+                           disabled = false,
+                           size = "md",
+                           textSize = "text-2xl",
+                           fullWidth = false,
+                           margin = "mt-0"
+                       }) => {
     const sizeClasses = {
         sm: "h-10 px-4",
         md: "h-12 px-6",
@@ -21,12 +21,11 @@ const PrimaryButton = ({
         "font-bold rounded-full transition duration-300",
         "focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50",
         "flex items-center justify-center font-markpro",
-
         sizeClasses,
         textSize,
         margin,
         fullWidth === true && "w-full",
-        disabled && "opacity-50 cursor-not-allowed"
+        disabled ? "opacity-50 cursor-not-allowed bg-gray-300" : "bg-blue-300",
     ].filter(Boolean).join(" ");
 
     return (
@@ -35,11 +34,6 @@ const PrimaryButton = ({
             onClick={onClick}
             type={type}
             disabled={disabled}
-            style={{
-                background: disabled
-                    ? "gray"
-                    : "linear-gradient(to right, #6ec189, #3b9473)"
-            }}
         >
             {children}
         </button>

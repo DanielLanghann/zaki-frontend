@@ -19,7 +19,7 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
         <nav className={`bg-gray-100 text-white fixed h-full left-0 top-0 flex flex-col transition-all duration-300 ${isExpanded ? 'w-64' : 'w-16'}`}>
             <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="absolute -right-3 top-20 bg-gray-100 text-white p-1 rounded-full shadow-lg hover:bg-gray-200 transition-colors"
+                className="absolute -right-3 top-20 bg-gray-100 text-white p-1 rounded-full shadow-lg hover:bg-gray-200 transition-colors z-10"
                 aria-label={isExpanded ? 'Collapse menu' : 'Expand menu'}
             >
                 <FontAwesomeIcon
@@ -47,6 +47,7 @@ const SideNavigation = ({ isExpanded, setIsExpanded }) => {
                     </ul>
                 </div>
             </div>
+            <div className={`absolute right-0 top-0 h-full bg-gray-200 transition-all duration-300 z-0 ${isExpanded ? 'w-0.5' : 'w-0.5'}`}></div>
         </nav>
     );
 };
