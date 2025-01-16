@@ -28,18 +28,8 @@ const UserListScreen = () => {
 
     return (
         <Navigation>
-            <div className="p-6 bg-gray-800 min-h-screen">
-                <ToastContainer
-                    position="top-right"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                />
+            <div className="p-6 bg-gray-800">
+
 
                 <h1 className="text-2xl font-bold mb-6 text-white">Users</h1>
 

@@ -7,10 +7,10 @@ const Navigation = ({ children }) => {
     const [isExpanded, setIsExpanded] = useState(true);
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="bg-gray-100">
             <HeaderNavigation />
             <SideNavigation isExpanded={isExpanded} setIsExpanded={setIsExpanded}/>
-            <main className={`transition-all duration-300 pt-16 min-h-screen bg-gray-100 ${
+            <main className={`flex-1 transition-all duration-300 mt-16 bg-green-600 ${
                 isExpanded ? 'pl-64' : 'pl-16'
             }`}>
                     {children}
